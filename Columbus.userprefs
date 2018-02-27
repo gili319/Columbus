@@ -1,8 +1,10 @@
-﻿<Properties StartupItem="Columbus.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ShipMovement.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Locations.cs">
     <Files>
-      <File FileName="Assets\ShipMovement.cs" Line="18" Column="1" />
+      <File FileName="Assets\ShipMovement.cs" Line="21" Column="65" />
+      <File FileName="Assets\Locations.cs" Line="112" Column="11" />
+      <File FileName="Assets\DialogHolder.cs" Line="24" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
