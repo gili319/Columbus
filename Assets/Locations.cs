@@ -29,14 +29,13 @@ public class Locations : MonoBehaviour {
 			}
 		}
 
-//		print ("fffffffffff   " + rows.Count);
 
 		string lat = "lat " + rows [2][3];
 		string lng = "lng " + rows [2][2];
 
 
 
-
+		//collect relevant coordinates
 		for (int x = 1; x < rows.Count; x++) {
 			double latNumDouble = Convert.ToDouble(rows[x][3]);
 			double lngNumDouble = Convert.ToDouble(rows[x][2]);
@@ -51,37 +50,22 @@ public class Locations : MonoBehaviour {
 		GameObject[] cube = new GameObject[9];
 		GameObject[] go = new GameObject[9];
 
-		Sprite locImage;
-		locImage = Resources.Load<Sprite> ("locIcon.png");
-
-
-//		for (int x = 0; x < 20; x++) { 
-//			cube[x] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-//			cube[x].AddComponent<Rigidbody>();
-//			cube[x].GetComponent<Rigidbody>().useGravity = false;
-//			//cube.transform.position = new Vector3(latNum, lngNum, 0);
-//			cube[x].transform.localScale = new Vector3 ((float) (0.01),(float) (0.01), (float) (0.01));
-//		}
+		//Sprite locImage;
+		//locImage = Resources.Load<Sprite> ("locIcon.png");
 
 		for (int i = 0; i < 9; i++) {
 			cube[i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-			cube[i].GetComponent<Renderer> ().material.color = new Color (1f, 0f, 0f);
 			cube[i].AddComponent<Rigidbody>();
 			cube[i].GetComponent<Rigidbody>().useGravity = false;
-			cube[i].transform.localScale = new Vector3 (0.05f, 0.05f, 0.01f);
+			cube[i].transform.localScale = new Vector3 (0.05f, 0.05f, 0.01f); //size
 			go[i] = new GameObject("go_" + i);
 			go[i].transform.localScale = new Vector3 (0.05f, 0.05f, 0.01f);
 			go[i].AddComponent<BoxCollider2D>();
 			go[i].GetComponent <BoxCollider2D>().isTrigger = true;
-			//go[i].AddComponent<DialogHolder>();
 		}
 
 
 		for (int x = 1; x < rowsInRange.Count; x++) {
-//			if (rowsInRange [x] [0] == "Ocean-Sea" ||rowsInRange [x] [0] == "Ocean-Sea" ||rowsInRange [x] [0] == "Ocean-Sea" ||rowsInRange [x] [0] == "Ocean-Sea" ||rowsInRange [x] [0] == "Ocean-Sea" 
-//				
-//				print (rowsInRange [x] [0] + ", lat: " +  Convert.ToDouble(rowsInRange[x][3]) + ", lng: " + Convert.ToDouble(rowsInRange[x][2]));
-
 
 			switch (rowsInRange [x] [0]) {
 				case "Hill":
@@ -150,37 +134,16 @@ public class Locations : MonoBehaviour {
 		//Portugal
 		go[8].transform.position = new Vector3(8f, 0.25f, 0);
 		cube[8].transform.position = new Vector3(8f, 0.25f, 0);
-
-//		cube[0] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-//		cube[0].GetComponent<Renderer> ().material.color = new Color (1f, 0f, 0f);
-//		cube[0].AddComponent<Rigidbody>();
-//		cube[0].GetComponent<Rigidbody>().useGravity = false;
-//		GameObject go0 = new GameObject("ll");
-//		go0.transform.localScale = new Vector3 (0.05f, 0.05f, 0.01f);
-//		go0.transform.position = new Vector3(2f, 0f, 0);
-//		go0.AddComponent<BoxCollider2D>();
-//		go0.GetComponent <BoxCollider2D>().isTrigger = true;
-//		go0.AddComponent<DialogHolder>();
+	}
 
 
 
-					//cube.transform.position = new Vector3(latNum, lngNum, 0);
-//		cube[0].transform.localScale = new Vector3 (0.05f, 0.05f, 0.01f);
+
+
 //
-//		cube[0].transform.position = new Vector3(2f, 0f, 0); 
-
-
-
-	}
-
-
-
-
-
-
-	private void copyScene(){
-		FileUtil.CopyFileOrDirectory (".\\Assets\\Scene\\Circle.png", ".\\Assets\\Scene\\Circle2.png");
-	}
+//	private void copyScene(){
+//		FileUtil.CopyFileOrDirectory (".\\Assets\\Scene\\Circle.png", ".\\Assets\\Scene\\Circle2.png");
+//	}
 	
 	// Update is called once per frame
 	void Update () {
